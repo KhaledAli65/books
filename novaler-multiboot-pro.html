@@ -13,7 +13,7 @@
             --text-color: #f8fafc;
             --border-color: #334155;
             --warning-color: #f59e0b;
-            --disabled-color: #64748b;
+            --info-color: #3b82f6;
         }
 
         body {
@@ -161,12 +161,24 @@
             color: #cbd5e1;
         }
 
+        .info-box {
+            background-color: rgba(59, 130, 246, 0.1);
+            border: 1px solid var(--info-color);
+            border-radius: 8px;
+            padding: 14px 16px;
+            margin-top: 16px;
+            color: #bfdbfe;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
         .warning-box {
             background-color: rgba(245, 158, 11, 0.1);
             border: 1px solid var(--warning-color);
             border-radius: 8px;
             padding: 16px;
-            margin-top: 28px;
+            margin-top: 20px;
             color: #fef3c7;
         }
 
@@ -201,14 +213,6 @@
             transform: translateY(-2px);
             box-shadow: 0 6px 16px rgba(16, 185, 129, 0.3);
         }
-
-        .btn-disabled {
-            background-color: #334155;
-            color: var(--disabled-color);
-            cursor: not-allowed;
-            border: 1px dashed var(--disabled-color);
-            opacity: 0.7;
-        }
     </style>
 </head>
 <body>
@@ -220,18 +224,18 @@
             <div class="version-badge"><span>الإصدار الثاني v2.0</span></div>
             
             <div class="desc">
-                <p>بلجن <b>Novaler MultiBoot Pro v2.0</b> هو التحديث الجديد والاحترافي المخصص لتوسيع الذاكرة وزيادة منافذ التشغيل المتعدد بأجهزة نوفالير. يتيح لك البلجن إعادة تقسيم <b>كارد الميموري (SD Card)</b> بنظام <b>GPT</b> الحديث ليمنحك خيارات مرنة لتثبيت عشرات الصور الخارجية بكل سهولة.</p>
+                <p>بلجن <b>Novaler MultiBoot Pro v2.0</b> هو التحديث الجديد والاحترافي المخصص لتوسيع الذاكرة وزيادة منافذ التشغيل المتعدد بأجهزة نوفالير. يتيح لك البلجن إعادة تقسيم <b>كارد الميموري (SD Card)</b> أو <b>الفلاشة (USB Drive)</b> بنظام <b>GPT</b> الحديث ليمنحك خيارات مرنة لتثبيت عشرات الصور الخارجية بكل سهولة.</p>
                 
-                <!-- خيارات التقسيم للإصدار الثاني -->
-                <div class="section-title">خيارات التقسيم الجديدة (SD Card):</div>
+                <!-- خيارات التقسيم -->
+                <div class="section-title">خيارات التقسيم الجديدة:</div>
                 <div class="slots-grid">
                     <div class="slot-card">
                         <span class="slot-badge">4 سلوتات</span>
-                        <p>تقسيم الكارد لإضافة 4 سلوتات خارجية جيدة ومناسبة للاستخدام المتوازن.</p>
+                        <p>تقسيم الذاكرة لإضافة 4 سلوتات خارجية جيدة ومناسبة للاستخدام المتوازن.</p>
                     </div>
                     <div class="slot-card">
                         <span class="slot-badge">8 سلوتات</span>
-                        <p>تقسيم الكارد لإضافة 8 سلوتات إضافية لعشاق تجربة الصور المختلفة.</p>
+                        <p>تقسيم الذاكرة لإضافة 8 سلوتات إضافية لعشاق تجربة الصور المختلفة.</p>
                     </div>
                     <div class="slot-card">
                         <span class="slot-badge">10 سلوتات</span>
@@ -244,7 +248,7 @@
                 <div class="usage-steps">
                     <div class="usage-step">
                         <div class="step-num">1</div>
-                        <p>قم بتركيب كارد الميموري (SD Card) في الجهاز، ثم ثبّت البلجن على أي صورة داخلية أو خارجية.</p>
+                        <p>قم بتركيب كارد الميموري (SD Card) أو الفلاشة (USB) في الجهاز، ثم ثبّت البلجن الخاص بها على أي صورة داخلية أو خارجية.</p>
                     </div>
                     <div class="usage-step">
                         <div class="step-num">2</div>
@@ -260,18 +264,23 @@
                     </div>
                 </div>
 
+                <!-- الملاحظة المضافة -->
+                <div class="info-box">
+                    💡 <b>ملحوظة:</b> نفس الشرح وخطوات الاستخدام أعلاه تنطبق تماماً على الإصدار الخاص الـ USB.
+                </div>
+
                 <div class="warning-box">
                     ⚠️ <b>ملاحظة هامة:</b> للرجوع أو الإدارة من الصور الخارجية، احرص دائمًا على الانتقال أولاً إلى الصورة الأساسية التي تحتوي على نظام البلجن المثبت.
                 </div>
             </div>
 
-            <!-- منطقة الأزرار -->
+            <!-- منطقة الأزرار المفعلة بالكامل -->
             <div class="btn-group">
-                <!-- زر تحميل الميموري كارد للإصدار الثاني (مفعل) -->
+                <!-- زر تحميل الميموري كارد -->
                 <a href="#" class="btn btn-primary" target="_blank">💾 تحميل إصدار SD Card v2.0</a>
                 
-                <!-- زر تحميل الفلاشة (معطل حالياً) -->
-                <span class="btn btn-disabled" title="قريباً - قيد الإعداد">🔌 إصدار USB (قريباً)</span>
+                <!-- زر تحميل الفلاشة المباشر -->
+                <a href="https://github.com/KhaledAli65/Slot/releases/download/v1.0.0/novalermultibootusb.ipk" class="btn btn-primary" target="_blank">🔌 تحميل إصدار USB Drive v2.0</a>
             </div>
         </div>
     </div>
