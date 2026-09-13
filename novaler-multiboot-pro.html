@@ -3,12 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Novaler MultiBoot Pro</title>
+    <title>Novaler MultiBoot Pro v2.0</title>
     <style>
         :root {
             --bg-color: #0f172a;
             --card-bg: #1e293b;
             --accent-color: #10b981;
+            --accent-hover: #059669;
             --text-color: #f8fafc;
             --border-color: #334155;
             --warning-color: #f59e0b;
@@ -29,14 +30,14 @@
 
         .container {
             width: 100%;
-            max-width: 800px;
+            max-width: 850px;
         }
 
         .card {
             background-color: var(--card-bg);
             border: 1px solid var(--border-color);
             border-radius: 16px;
-            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.4);
             overflow: hidden;
         }
 
@@ -47,9 +48,24 @@
         .header-title {
             text-align: center;
             margin-top: 0;
-            margin-bottom: 24px;
+            margin-bottom: 8px;
             color: var(--accent-color);
-            font-size: 1.8rem;
+            font-size: 1.9rem;
+        }
+
+        .version-badge {
+            text-align: center;
+            margin-bottom: 24px;
+        }
+
+        .version-badge span {
+            background-color: rgba(16, 185, 129, 0.15);
+            color: var(--accent-color);
+            border: 1px solid var(--accent-color);
+            padding: 4px 14px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: bold;
         }
 
         .desc p {
@@ -67,36 +83,82 @@
             font-weight: bold;
         }
 
-        .steps {
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
-            margin-top: 20px;
-        }
-
-        .step {
-            background-color: rgba(15, 23, 42, 0.6);
+        .section-title {
+            font-size: 1.3rem;
+            color: #ffffff;
+            margin-top: 28px;
+            margin-bottom: 16px;
             border-right: 4px solid var(--accent-color);
-            padding: 16px;
-            border-radius: 8px;
-            display: flex;
-            align-items: flex-start;
-            gap: 16px;
+            padding-right: 12px;
         }
 
-        .num {
+        .slots-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 16px;
+            margin-top: 16px;
+        }
+
+        .slot-card {
+            background-color: rgba(15, 23, 42, 0.6);
+            border: 1px solid var(--border-color);
+            padding: 16px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .slot-badge {
+            display: inline-block;
             background-color: var(--accent-color);
             color: #000;
             font-weight: bold;
-            padding: 4px 12px;
+            padding: 4px 14px;
             border-radius: 6px;
-            font-size: 0.9rem;
-            white-space: nowrap;
+            font-size: 1rem;
+            margin-bottom: 8px;
         }
 
-        .step p {
+        .slot-card p {
+            margin: 0;
+            font-size: 0.95rem;
+            color: #cbd5e1;
+            line-height: 1.5;
+        }
+
+        .usage-steps {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-top: 16px;
+        }
+
+        .usage-step {
+            background-color: rgba(15, 23, 42, 0.4);
+            border: 1px solid var(--border-color);
+            padding: 14px 18px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .step-num {
+            background-color: #334155;
+            color: var(--accent-color);
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+
+        .usage-step p {
             margin: 0;
             line-height: 1.6;
+            color: #cbd5e1;
         }
 
         .warning-box {
@@ -104,12 +166,8 @@
             border: 1px solid var(--warning-color);
             border-radius: 8px;
             padding: 16px;
-            margin-top: 24px;
+            margin-top: 28px;
             color: #fef3c7;
-        }
-
-        .warning-box b {
-            color: var(--warning-color);
         }
 
         .btn-group {
@@ -139,7 +197,7 @@
         }
 
         .btn-primary:hover {
-            opacity: 0.9;
+            background-color: var(--accent-hover);
             transform: translateY(-2px);
             box-shadow: 0 6px 16px rgba(16, 185, 129, 0.3);
         }
@@ -159,38 +217,60 @@
     <div class="card">
         <div class="inner">
             <h2 class="header-title">Novaler MultiBoot Pro</h2>
+            <div class="version-badge"><span>الإصدار الثاني v2.0</span></div>
             
             <div class="desc">
-                <p>بلجن <b>Novaler MultiBoot Pro</b> هو أداة احترافية وحصرية مصممة لتوسيع ذاكرة أجهزة نوفالير عبر فتح أفضل خيارات التشغيل المتعدد، حيث يتيح لك تحويل <b>كارد الميموري (SD Card)</b> إلى <b>سلوتات جديدة</b> تُضاف إلى سلوتات الجهاز الأساسية بكل سهولة.</p>
-                <br>
-                <p>يعمل البلجن بكفاءة عالية عند تثبيته على <span class="g">أي صورة</span> داخلية أو خارجية، حيث يقسم المساحة بنظام <b>GPT</b> الحديث ليمنحك الحرية المطلوبة بحسب احتياجك:</p>
+                <p>بلجن <b>Novaler MultiBoot Pro v2.0</b> هو التحديث الجديد والاحترافي المخصص لتوسيع الذاكرة وزيادة منافذ التشغيل المتعدد بأجهزة نوفالير. يتيح لك البلجن إعادة تقسيم <b>كارد الميموري (SD Card)</b> بنظام <b>GPT</b> الحديث ليمنحك خيارات مرنة لتثبيت عشرات الصور الخارجية بكل سهولة.</p>
                 
-                <div class="steps">
-                    <div class="step">
-                        <span class="num">2 سلوت</span>
-                        <p><b>خيار التقسيم الأول:</b> تقسيم كارد الميموري إلى <b>2 سلوت</b> إضافية (Slot 6 و Slot 7).</p>
+                <!-- خيارات التقسيم للإصدار الثاني -->
+                <div class="section-title">خيارات التقسيم الجديدة (SD Card):</div>
+                <div class="slots-grid">
+                    <div class="slot-card">
+                        <span class="slot-badge">4 سلوتات</span>
+                        <p>تقسيم الكارد لإضافة 4 سلوتات خارجية جيدة ومناسبة للاستخدام المتوازن.</p>
                     </div>
-                    <div class="step">
-                        <span class="num">4 سلوتات</span>
-                        <p><b>خيار التقسيم الثاني:</b> تقسيم كارد الميموري إلى <b>4 سلوتات</b> إضافية (من Slot 6 إلى Slot 9) للوصول لأقصى إمكانية <b>(إجمالي 9 سلوتات للجهاز)</b>.</p>
+                    <div class="slot-card">
+                        <span class="slot-badge">8 سلوتات</span>
+                        <p>تقسيم الكارد لإضافة 8 سلوتات إضافية لعشاق تجربة الصور المختلفة.</p>
+                    </div>
+                    <div class="slot-card">
+                        <span class="slot-badge">10 سلوتات</span>
+                        <p>الخيار الأقصى: إضافة <b>10 سلوتات خارجية كاملة</b> للوصول لأعلى طاقة استيعابية.</p>
                     </div>
                 </div>
-                <br>
-                <p>بعد إتمام عملية التقسيم، ستتمكن من تنصيب <b>أي صور جديدة</b> سواء كانت <span class="g">خام (Clean)</span> أو <span class="g">باكاب (Backup)</span> على السلوتات الخارجية بكل سلاسة، مع إدارة كاملة للعملية مباشرة من داخل الصورة التي تم تثبيت البلجن عليها.</p>
-                <br>
-                <p>التنقل بين الصور المثبتة (سواء الأساسية أو الخارجية) يتم كالمعتاد عبر قائمة <b>MultiBoot Manager</b> في قائمة <b>Shut Down</b> داخل أي صورة.</p>
-                
+
+                <!-- شرح الاستخدام -->
+                <div class="section-title">طريقة الاستخدام والتنصيب:</div>
+                <div class="usage-steps">
+                    <div class="usage-step">
+                        <div class="step-num">1</div>
+                        <p>قم بتركيب كارد الميموري (SD Card) في الجهاز، ثم ثبّت البلجن على أي صورة داخلية أو خارجية.</p>
+                    </div>
+                    <div class="usage-step">
+                        <div class="step-num">2</div>
+                        <p>افتح البلجن واختر عدد السلوتات المطلوبة <b>(4، 8، أو 10 سلوتات)</b> وابدأ عملية التقسيم.</p>
+                    </div>
+                    <div class="usage-step">
+                        <div class="step-num">3</div>
+                        <p>بعد انتهاء التقسيم، قم بتنصيب أي صورة جديدة <b>(Clean أو Backup)</b> مباشرة على السلوتات الخارجية عبر البلجن.</p>
+                    </div>
+                    <div class="usage-step">
+                        <div class="step-num">4</div>
+                        <p>للتنقل بين الصور، استخدم قائمة <b>MultiBoot Manager</b> المعتادة من خيارات الإغلاق (Shut Down).</p>
+                    </div>
+                </div>
+
                 <div class="warning-box">
-                    ⚠️ <b>ملاحظة هامة:</b> للرجوع أو التنقل بين الصور السفلية/الخارجية، يجب الانتقال أولاً إلى الصورة الأساسية التي يحتوي نظامها على البلجن المثبت.
+                    ⚠️ <b>ملاحظة هامة:</b> للرجوع أو الإدارة من الصور الخارجية، احرص دائمًا على الانتقال أولاً إلى الصورة الأساسية التي تحتوي على نظام البلجن المثبت.
                 </div>
             </div>
 
             <!-- منطقة الأزرار -->
             <div class="btn-group">
-                <!-- زر تحميل الميموري كارد (مفعل) -->
-                <a href="#" class="btn btn-primary" target="_blank">💾 تحميل إصدار SD Card</a>
+                <!-- زر تحميل الميموري كارد للإصدار الثاني (مفعل) -->
+                <a href="#" class="btn btn-primary" target="_blank">💾 تحميل إصدار SD Card v2.0</a>
                 
-                <!-- زر تحميل الفلاشة (معطل قيد الإعداد) -->
+                <!-- زر تحميل الفلاشة (معطل حالياً) -->
                 <span class="btn btn-disabled" title="قريباً - قيد الإعداد">🔌 إصدار USB (قريباً)</span>
             </div>
         </div>
